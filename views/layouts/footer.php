@@ -62,6 +62,7 @@
 		  	var id = $(this).attr("data-id");
 		  	$.post("/cart/addAjax/"+id, {}, function (data) {
 		  		$(".basket a").html(data);
+		  		$(".itog .p2").load(location.href + " .itog .p2");
 		  	});
 		  	return false;
 		  });
@@ -70,6 +71,7 @@
 		  	var id = $(this).attr("data-id");
 		  	$.post("/cart/removeAjax/"+id, {}, function (data) {
 		  		$(".basket a").html(data);
+		  		$(".itog .p2").load(location.href + " .itog .p2");
 		  	});
 		  	return false;
 		  	

@@ -42,6 +42,7 @@ class Cart
 			}
 			$_SESSION['products'] = $productsInCart;
 			return self::countItems();
+
 		}
 			
 	}
