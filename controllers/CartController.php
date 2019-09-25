@@ -12,9 +12,17 @@ class CartController
 		// header("Location: $referrer");
 	}
 
+	// добавление товара
 	public function actionAddAjax($id)
 	{
 		echo Cart::addProduct($id);
+		return true;
+	}
+
+	// удаление одного товара
+	public function actionremoveAjax($id)
+	{
+		echo Cart::removeProduct($id);
 		return true;
 	}
 

@@ -11,6 +11,10 @@ return array(
 
     'cart/add/([0-9]+)' => 'cart/add/$1', // добавление в корзину
     'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1', // добавление в корзину ajax
+
+    'cart/remove/([0-9]+)' => 'cart/remove/$1', // добавление в корзину
+    'cart/removeAjax/([0-9]+)' => 'cart/removeAjax/$1', // добавление в корзину ajax
+
     'cart' => 'cart/index', // страница корзины
 
     'user/register' => 'user/register',

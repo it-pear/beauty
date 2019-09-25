@@ -22,7 +22,7 @@
 													<div class="media d-block d-md-flex">
 														<input type="hidden" class="single__price" value="<?php echo $product['price']; ?>" > 
 														<div class="number singleInfo__number">
-														  <span class="minus">-</span>
+														  <a href="/cart/minus/<?php echo $product['id'] ?>" class="minus" data-id="<?php echo $product['id'] ?>">-</a>
 														  <input type="text" value="<?php echo $productsInCart[$product['id']]; ?>" size="5" disabled id="kolvo_tovar">
 														  <a href="/cart/add/<?php echo $product['id'] ?>" class="plus" data-id="<?php echo $product['id'] ?>">+</a>
 														</div>

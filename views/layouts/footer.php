@@ -66,6 +66,15 @@
 		  	return false;
 		  });
 
+		  $(".minus").click(function () {
+		  	var id = $(this).attr("data-id");
+		  	$.post("/cart/removeAjax/"+id, {}, function (data) {
+		  		$(".basket a").html(data);
+		  	});
+		  	return false;
+		  	
+		  });
+
 		});
 	</script>
 
