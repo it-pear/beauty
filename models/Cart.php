@@ -24,7 +24,7 @@ class Cart
 		return self::countItems();
 	}
 
-	// Удаление кол-ва товаров в массив с их количеством
+	// Удаление одного товара из массива 
 	public static function removeProduct($id)
 	{
 		$id = intval($id);
@@ -45,6 +45,16 @@ class Cart
 
 		}
 			
+	}
+
+	public static function deleteProduct($id)
+	{
+		// получаем массив
+		$productsInCart = self::getProducts();
+		// удаляем нужный id из массива
+		unset($productsInCart[$id]);
+		// записываем кастомизированные данные в сессию
+		$_SESSION['products'] = $productsInCart;
 	}
 
 	// вывод кол-ва товаров в корзине

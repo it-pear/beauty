@@ -64,6 +64,20 @@
 		  		$(".basket a").html(data);
 		  		$(".itog .p2").load(location.href + " .itog .p2");
 		  	});
+
+		  	// обновление калькулятора цены
+		  	var $quantity = $(this).prev(".kolvo_tovar").val();
+		  	var $price = $(this).parent().parent().find(".single__price").val();
+		  	// расчеты
+		  	var $result = $quantity * $price;
+
+		  	// присвоение
+		  	$(this)
+		  		.parent()
+		  		.parent()
+		  		.find('.singleInfo__price')
+		  		.val($result);
+
 		  	return false;
 		  });
 
@@ -73,6 +87,19 @@
 		  		$(".basket a").html(data);
 		  		$(".itog .p2").load(location.href + " .itog .p2");
 		  	});
+
+		  	// обновление калькулятора цены
+		  	var $quantity = $(this).next(".kolvo_tovar").val();
+		  	var $price = $(this).parent().parent().find(".single__price").val();
+		  	// расчеты
+		  	var $result = $quantity * $price;
+
+		  	// присвоение
+		  	$(this)
+		  		.parent()
+		  		.parent()
+		  		.find('.singleInfo__price')
+		  		.val($result);
 		  	return false;
 		  	
 		  });

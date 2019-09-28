@@ -14,7 +14,15 @@ jQuery(document).ready(function(){
 		jQuery(this).parent().find('ul').slideToggle(250);
 	});
 
-	
+
+
+
+	$('.menu-item-price').each(function() {
+    var $quantity = $(this).find(".kolvo_tovar").val();
+		var $price = $(this).find(".single__price").val();
+	  var $result = $quantity * $price;
+	  $(this).find('.singleInfo__price').val($result);
+	});
 
 	// плюс минус товар
 	$('.minus').click(function () {
@@ -23,30 +31,11 @@ jQuery(document).ready(function(){
     count = count < 1 ? 1 : count;
     $input.val(count);
     $input.change();
-
-    var $price = $(this).parent().parent().find(".singleInfo__price");
-    var $price1 = $(this).parent().parent().find(".single__price");
-		
-		if(parseInt($price.val()) <= parseInt($price1.val()) ){
-			return false;
-		}else{
-			return $price.val(parseInt($price.val()) - parseInt($price1.val()) );
-		}
-    $price.change();
-    
-    return false;
   });
   $('.plus').click(function () {
     var $input = $(this).parent().find('input');
     $input.val(parseInt($input.val()) + 1);
     $input.change();
-
-    var $price = $(this).parent().parent().find(".singleInfo__price");
-    var $price1 = $(this).parent().parent().find(".single__price");
-		$price.val(parseInt($price.val()) + parseInt($price1.val()) );
-    $price.change();
-    
-    return false;
   });
 
 

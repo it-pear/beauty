@@ -26,6 +26,13 @@ class CartController
 		return true;
 	}
 
+	// удаление выбранного товара
+	public function actionDelete($id)
+	{
+		echo Cart::deleteProduct($id);
+		header("Location: /cart");
+	}
+
 	public function actionIndex()
 	{
 		$categories = array();

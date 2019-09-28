@@ -34,9 +34,9 @@
 									<p class="menu-item__brand mb-2">Charlotte Tilbury ID<?php echo $product['id'] ?></p>
 									<h5 class="menu-item__name"><?php echo $product['name'] ?></h5>
 									<p class="menu-item__price mb-2"><?php echo $product['price'] ?> грн.</p>
-									<button class="beauty-btn menu-item__basket">
+									<a href="/cart/add/<?php echo $product['id'] ?>" class="beauty-btn menu-item__basket" data-id="<?php echo $product['id'] ?>">
 										Добавить в корзину <img src="/template/img/basket.svg" alt="">
-									</button>
+									</a>
 								</div>
 							</div>
 						<?php endforeach; ?>
