@@ -18,6 +18,7 @@ return array(
     'cart/delete/([0-9]+)' => 'cart/delete/$1', // полное удаление товара
 
     'cart' => 'cart/index', // страница корзины
+    'cart/checkout' => 'cart/checkout', // actionCheckOut в CartController  
 
     'user/register' => 'user/register',
     'user/login' => 'user/login',

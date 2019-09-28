@@ -53,6 +53,14 @@ class CartController
 		require_once(ROOT . '/views/cart/index.php');
 		return true;
 	}
+
+
+	// оформление заказа
+	public function actionCheckout()
+	{
+		require_once(ROOT . '/views/cart/checkout.php');
+    return true;
+	}
 	
 }
 

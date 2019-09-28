@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 
 
 
-
+	// подсчет всех товаров на странцие
 	$('.menu-item-price').each(function() {
     var $quantity = $(this).find(".kolvo_tovar").val();
 		var $price = $(this).find(".single__price").val();

@@ -78,7 +78,7 @@
             </div>
             <div class="w-100 text-center">
               <a href="#" class="beauty-btn cart__submit mt-4">Оформить заказ</a><br>
-              <a href="" class="cart__home">продолжить покупки</a>
+              <a href="/catalog" class="cart__home">продолжить покупки</a>
             </div>
           <?php else: ?>
             <p>Корзина пуста</p>
