@@ -102,6 +102,7 @@ class User
 		return false;
 	}
 
+	// отправка email
 	public static function checkEmailExists($email)
 	{
 		$db = Db::getConnection();
@@ -116,5 +117,24 @@ class User
 		}return false;
 
 	}
+
+	// выборка id пользователя
+	public static function getUserById($id)
+  {
+    if ($id) {
+      $db = Db::getConnection();
+      $sql = 'SELECT * FROM user WHERE id = :id';
+
+      $result = $db->prepare($sql);
+      $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+      // Указываем, что хотим получить данные в виде массива
+      $result->setFetchMode(PDO::FETCH_ASSOC);
+      $result->execute();
+
+
+      return $result->fetch();
+    }
+  }
 
 }

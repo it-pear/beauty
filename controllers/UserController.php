@@ -73,8 +73,8 @@ class UserController
 			} else {
 				User::auth($userId);
 				// выполнение после входа
-				echo $userId;
-				// header ("Location: /cabinet/");
+				// echo $userId;
+				header ("Location: /admin");
 			}
 
 		}
@@ -87,8 +87,8 @@ class UserController
 	// выход с сайта 
 	public function actionLogout()
 	{
-		session_start();
-		unset($_SESSION["user"]);
-		header("Location: /");
+		// session_start();
+    unset($_SESSION["user"]);
+    header("Location: /");
 	}
 }
