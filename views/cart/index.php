@@ -77,7 +77,7 @@
               </label>
             </div>
             <div class="w-100 text-center">
-              <a href="#" class="beauty-btn cart__submit mt-4">Оформить заказ</a><br>
+              <a href="/cart/checkout" class="beauty-btn cart__submit mt-4">Оформить заказ</a><br>
               <a href="/catalog" class="cart__home">продолжить покупки</a>
             </div>
           <?php else: ?>
