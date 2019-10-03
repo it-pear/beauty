@@ -15,7 +15,43 @@
       <h1 class="h2">Редактировать товар - </h1>
     </div>
     
-
+    <form method="POST">
+      <div class="form-group">
+        <label>Название продукта</label>
+        <input type="text" class="form-control" name="name">
+      </div>
+      <div class="form-group">
+        <label >Описание товара</label>
+        <textarea class="form-control" name="description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Категория продукта</label>
+        <select class="form-control" name="category_id">
+          <option value="">Категория 1</option>
+          <option value="">Категория 2</option>
+          <option value="">Категория 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Цена продукта (только цифры)</label>
+        <input type="tel" class="form-control" name="price">
+      </div>
+      <div class="form-group">
+        <label>Наличие продукта</label>
+        <select class="form-control" name="availability">
+          <option value="">В наличии</option>
+          <option value="">Нет в наличии 2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Бренд продукта</label>
+        <input type="text" class="form-control" name="brand">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Вставьте картинку</label>
+        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+    </form>
     
   </main>
 

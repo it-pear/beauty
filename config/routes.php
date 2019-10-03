@@ -28,9 +28,9 @@ return array(
     'admin' => 'admin/index',
     // админка => продукты
     'admin/products' => 'adminProduct/index', 
-    'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
-    'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
-    'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
+    'admin/products/create' => 'adminProduct/create',
+    'admin/products/update/([0-9]+)' => 'adminProduct/update/$1',
+    'admin/products/delete/([0-9]+)' => 'adminProduct/delete/$1',
     // админка => заказы
     'admin/orders' => 'adminOrder/index', 
     // админка => категории

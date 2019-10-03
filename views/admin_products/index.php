@@ -13,6 +13,7 @@
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Товары</h1>
+      <a href="/admin/products/create" class="btn btn-warning">Добавить товар</a>
     </div>
     <table class="table table_products">
       <thead class="thead-dark">

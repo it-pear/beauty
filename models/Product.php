@@ -128,11 +128,38 @@ class Product{
       return $products;
   }
 
-  public static function getProductsList($value='')
+  // получение списка продуктов
+  public static function getProductsList()
   {
-    # code...
+    $db = Db::getConnection();
+
+    $result = $db->query('SELECT id, name, price FROM product ORDER BY id ASC');
+    $productsList = array();
+
+    $i = 0;
+    while ($row = $result->fetch()) {
+      $productsList[$i]['id'] = $row['id'];
+      $productsList[$i]['name'] = $row['name'];
+      $productsList[$i]['price'] = $row['price'];
+      $i++;
+    }
+
+    return $productsList;
   }
 
+  // удаление товара по id
+  public static function deleteProductById($id)
+  {
+    $db = Db::getConnection();
+
+    $sql = 'DELETE FROM product WHERE id = :id';
+
+    $result = $db->prepare($sql);
+    $result->bindParam(':id', $id, PDO::PARAM_INT);
+    return $result->execute();
+  }
+
+  
 }
 
 

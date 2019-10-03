@@ -12,9 +12,14 @@
       </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Редактировать товар - </h1>
+      <h1 class="h2">Удалить этот товар - <?php echo $id ?> ?</h1>
+
     </div>
-    
+      <p>Вы действительно хотитет удалить этот товар ?</p>
+      
+      <form method="POST">
+        <input type="submit" name="submit" class="btn btn-warning" value="Удалить товар">
+      </form>
 
     
   </main>
