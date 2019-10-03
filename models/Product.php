@@ -128,6 +128,11 @@ class Product{
       return $products;
   }
 
+  public static function getProductsList($value='')
+  {
+    # code...
+  }
+
 }
 
 
