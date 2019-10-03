@@ -27,9 +27,13 @@
       <div class="form-group">
         <label>Категория продукта</label>
         <select class="form-control" name="category_id">
-          <option value="">Категория 1</option>
-          <option value="">Категория 2</option>
-          <option value="">Категория 3</option>
+          <?php if (is_array($categoriesList)): ?>
+            <?php foreach ($categoriesList as $category): ?>
+              <option value="<?php echo $category['id']; ?>">
+                <?php echo $category['name']; ?>
+              </option>
+            <?php endforeach; ?>
+          <?php endif; ?>
         </select>
       </div>
       <div class="form-group">
