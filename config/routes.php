@@ -31,27 +31,16 @@ return array(
     'admin/products/create' => 'adminProduct/create',
     'admin/products/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/products/delete/([0-9]+)' => 'adminProduct/delete/$1',
-    // админка => заказы
-    'admin/orders' => 'adminOrder/index', 
     // админка => категории
     'admin/categories' => 'adminCategory/index', 
+    'admin/categories/create' => 'adminCategory/create',
+    'admin/categories/update/([0-9]+)' => 'adminCategory/update/$1',
+    'admin/categories/delete/([0-9]+)' => 'adminCategory/delete/$1',
+    // админка => заказы
+    'admin/orders' => 'adminOrder/index',
+    'admin/orders/update/([0-9]+)' => 'adminOrder/update/$1',
+    'admin/orders/delete/([0-9]+)' => 'adminOrder/delete/$1',
+    'admin/orders/view/([0-9]+)' => 'adminOrder/view/$1',
 
     '' => 'site/index', // actionIndex в SiteController
-
-
-     // Управление товарами:    
-    // 'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
-    // 'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
-    // // Управление категориями:    
-    // 'admin/category/create' => 'adminCategory/create',
-    // 'admin/category/update/([0-9]+)' => 'adminCategory/update/$1',
-    // 'admin/category/delete/([0-9]+)' => 'adminCategory/delete/$1',
-    // 'admin/category' => 'adminCategory/index',
-    // // Управление заказами:    
-    // 'admin/order/update/([0-9]+)' => 'adminOrder/update/$1',
-    // 'admin/order/delete/([0-9]+)' => 'adminOrder/delete/$1',
-    // 'admin/order/view/([0-9]+)' => 'adminOrder/view/$1',
-    // 'admin/order' => 'adminOrder/index',
-    // // Админпанель:
-    // 'admin' => 'admin/index',
 );

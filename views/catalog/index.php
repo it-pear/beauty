@@ -29,7 +29,7 @@
 							<div class="col-6 col-md-4 col-lg-3">
 								<div class="menu-item">
 									<a class="menu-item__link__img" href="/product/<?php echo $product['id'] ?>">
-										<img src="/template/img/product.jpg" alt="">
+										<img src="<?php echo Product::getImage($product['id']); ?>" alt="">
 									</a>
 									<p class="menu-item__brand mb-2">Charlotte Tilbury</p>
 									<h5 class="menu-item__name"><?php echo $product['name'] ?> ID<?php echo $product['id'] ?></h5>

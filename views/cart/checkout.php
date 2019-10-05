@@ -2,7 +2,7 @@
 	
 	<?php if ($result): ?>
 		<script type="text/javascript">
-			window.location.href = "cart/thanks";
+			window.location.href = "/cart/thanks";
 		</script>
 
 		<?php else: ?>

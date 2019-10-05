@@ -28,11 +28,11 @@
 						<?php foreach ($latestProducts as $product): ?>
 							<div class="col-6 col-md-4 col-lg-3">
 								<div class="menu-item">
-									<a href="/product/<?php echo $product['id'] ?>">
-										<img src="/template/img/product.jpg" alt="">
+									<a class="menu-item__link__img" href="/product/<?php echo $product['id'] ?>">
+										<img src="<?php echo Product::getImage($product['id']); ?>" alt="">
 									</a>
-									<p class="menu-item__brand mb-2">Charlotte Tilbury ID<?php echo $product['id'] ?></p>
-									<h5 class="menu-item__name"><?php echo $product['name'] ?></h5>
+									<p class="menu-item__brand mb-2">Charlotte Tilbury</p>
+									<h5 class="menu-item__name"><?php echo $product['name'] ?> ID<?php echo $product['id'] ?></h5>
 									<p class="menu-item__price mb-2"><?php echo $product['price'] ?> грн.</p>
 									<a href="/cart/add/<?php echo $product['id'] ?>" class="beauty-btn menu-item__basket" data-id="<?php echo $product['id'] ?>">
 										Добавить в корзину <img src="/template/img/basket.svg" alt="">

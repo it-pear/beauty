@@ -12,10 +12,35 @@
       </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Главная</h1>
+      <h1 class="h2">Добавить Категорию</h1>
     </div>
-    <h2>Привет Админ</h2>
-    <p>Выберите раздел слева и начните работу</p>
+
+    <?php if (isset($errors) && is_array($errors)): ?>
+      <ul>
+        <?php foreach ($errors as $error): ?>
+          <li><?php echo $error; ?></li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+    
+    <form method="POST">
+      <div class="form-group">
+        <label>Название категории</label>
+        <input type="text" class="form-control" name="name">
+      </div>
+      <div class="form-group">
+        <label>Порядковый номер</label>
+        <input type="text" class="form-control" name="sort_order">
+      </div>
+      <div class="form-group">
+        <label>Статус</label>
+        <select class="form-control" name="status">
+          <option value="1" selected="selected">Отображается</option>
+          <option value="0">Скрыта</option>
+        </select>
+      </div>
+      <input type="submit" name="submit" class="btn btn-warning w-25 pt-3 pb-3 text-uppercase" value="Создать категорию">
+    </form>
     
   </main>
 

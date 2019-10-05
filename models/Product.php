@@ -3,13 +3,10 @@
 
 class Product{
 
-	const SHOW_BY_DEFAULT = 4;
+	const SHOW_BY_DEFAULT = 8;
 
 	// result array product
-	public static function getLatestProducts($count = self::SHOW_BY_DEFAULT, $page = 1){
-		$count = intval($count);
-		$page = intval($page);
-		$offset = $page * $count;
+	public static function getLatestProducts($count = self::SHOW_BY_DEFAULT){
 
 		$db = Db::getConnection();
 		$productsList = array();
@@ -17,9 +14,7 @@ class Product{
 		$result = $db->query('SELECT id, name, price, image, is_new FROM product '
 			. 'WHERE status = "1" '
 			. 'ORDER BY id DESC '
-			. 'LIMIT ' . $count
-			. ' OFFSET '. $offset
-		);
+			. 'LIMIT ' . $count);
 
 		$i = 0;
 		while ($row = $result->fetch()) {
@@ -67,10 +62,7 @@ class Product{
       }
   }
 
-   /**
-   * Returns product item by id
-   * @param integer $id
-   */
+  // получение id товара со всеми данными
   public static function getProductById($id)
   {
       $id = intval($id);
@@ -83,6 +75,26 @@ class Product{
           
           return $result->fetch();
       }
+  }
+
+  /**
+   * Возвращает путь к изображению
+   */
+  public static function getImage($id)
+  {
+      // Название изображения-пустышки
+      $noImage = 'no-image.jpg';
+      // Путь к папке с товарами
+      $path = '/upload/images/products/';
+      // Путь к изображению товара
+      $pathToProductImage = $path . $id . '.jpg';
+      if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+          // Если изображение для товара существует
+          // Возвращаем путь изображения товара
+          return $pathToProductImage;
+      }
+      // Возвращаем путь изображения-пустышки
+      return $path . $noImage;
   }
   
   /**
@@ -158,6 +170,59 @@ class Product{
     $result->bindParam(':id', $id, PDO::PARAM_INT);
     return $result->execute();
   }
+
+  // обновить товар
+  public static function updateProductById($id, $options)
+  {
+    $db = Db::getConnection();
+
+    // текс тзапроса к бд
+    $sql = "UPDATE product 
+        SET 
+          name = :name,
+          price = :price,
+          category_id = :category_id,
+          brand = :brand,
+          availability = :availability,
+          description = :description
+        WHERE id = :id";
+
+    $result = $db->prepare($sql);
+    $result->bindParam(':id', $id, PDO::PARAM_INT);
+    $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+    $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+    $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
+    $result->bindParam(':brand', $options['brand'], PDO::PARAM_STR);
+    $result->bindParam(':availability', $options['availability'], PDO::PARAM_INT);
+    $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
+    return $result->execute();
+  }
+
+  // создать товар
+  public static function createProduct($options)
+  {
+    $db = Db::getConnection();
+
+    // текс тзапроса к бд
+    $sql = 'INSERT INTO product ' 
+           . '(name, price, category_id, brand, availability, description)'
+           . 'VALUES '
+           . '(:name, :price, :category_id, :brand, :availability, :description)';
+
+    $result = $db->prepare($sql);
+    $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
+    $result->bindParam(':price', $options['price'], PDO::PARAM_STR);
+    $result->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
+    $result->bindParam(':brand', $options['brand'], PDO::PARAM_STR);
+    $result->bindParam(':availability', $options['availability'], PDO::PARAM_INT);
+    $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
+    if ($result->execute()) {
+      return $db->lastInsertId();
+    }
+    return 0;
+  }
+
+  
 
   
 }

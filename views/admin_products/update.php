@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Редактировать товар - </h1>
+      <h1 class="h2">Редактировать товар - <?php echo $id; ?></h1>
     </div>
 
     
@@ -20,42 +20,51 @@
     
     
     
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label>Название продукта</label>
-        <input type="text" class="form-control" name="name">
+        <input type="text" class="form-control" name="name" value="<?php echo $product['name'] ?>">
       </div>
       <div class="form-group">
         <label >Описание товара</label>
-        <textarea class="form-control" name="description" rows="3"></textarea>
+        <textarea class="form-control" name="description" rows="3"><?php echo $product['description'] ?></textarea>
       </div>
       <div class="form-group">
         <label>Категория продукта</label>
         <select class="form-control" name="category_id">
-          <option value="">Категория 1</option>
-          <option value="">Категория 2</option>
-          <option value="">Категория 3</option>
+          <?php if (is_array($categoriesList)): ?>
+            <?php foreach ($categoriesList as $category): ?>
+              <option value="<?php echo $category['id']; ?>"
+                <?php if ($product['category_id'] == $category['id']) echo ' selected="selected"' ?>>
+                <?php echo $category['name']; ?>
+              </option>
+            <?php endforeach; ?>
+          <?php endif; ?>
         </select>
       </div>
       <div class="form-group">
         <label>Цена продукта (только цифры)</label>
-        <input type="tel" class="form-control" name="price">
+        <input type="tel" class="form-control" name="price" value="<?php echo $product['price'] ?>">
       </div>
       <div class="form-group">
         <label>Наличие продукта</label>
-        <select class="form-control" name="availability">
-          <option value="">В наличии</option>
-          <option value="">Нет в наличии 2</option>
+        <select class="form-control" name="availability" value="<?php echo $product['availability'] ?>">
+          <option value="1" <?php if ($product['availability'] == 1) echo ' selected="selected"'; ?>>В наличии</option>
+          <option value="0" <?php if ($product['availability'] == 0) echo ' selected="selected"'; ?>>Нет в наличии</option>
         </select>
       </div>
       <div class="form-group">
         <label>Бренд продукта</label>
-        <input type="text" class="form-control" name="brand">
+        <input type="text" class="form-control" name="brand" value="<?php echo $product['brand'] ?>">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlFile1">Вставьте картинку</label>
-        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+        <label for="exampleFormControlFile1">Изображение продукта</label>
+        <div>
+          <img src="<?php echo Product::getImage($product['id']); ?>" width="200" alt="" />
+        </div>
+        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" value="<?php echo $product['image']; ?>">
       </div>
+      <input type="submit" name="submit" class="btn btn-warning w-100 pt-3 pb-3 text-uppercase" value="Сохранить">
     </form>
     
 
