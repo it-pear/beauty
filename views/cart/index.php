@@ -16,7 +16,7 @@
                       <img src="/template/img/cancel.svg" alt="">
                     </a>
                     <div class="media">
-                      <img src="/template/img/product.jpg" class="mr-4" alt="">
+                      <img src="<?php echo Product::getImage($product['id']); ?>" width="184" class="mr-4" alt="">
                       <div class="media-body">
                         <p class="menu-item__brand mb-2">Charlotte Tilbury</p>
                         <h5 class="menu-item__name">Помада</h5>
