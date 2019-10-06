@@ -73,10 +73,10 @@
       <tbody>
         <?php foreach ($products as $product): ?>
         <tr>
-          <th scope="row"><?php echo $product['id']; ?></th>
-          <td><?php echo $product['name']; ?></td>
-          <td><?php echo $product['price']; ?> грн.</td>
-          <td><?php echo $productQuantity[$product['id']]; ?></td>
+          <td scope="row" title="Номер товара"><?php echo $product['id']; ?></td>
+          <td title="Название"><?php echo $product['name']; ?></td>
+          <td title="Цена"><?php echo $product['price']; ?> грн.</td>
+          <td title="Количество"><?php echo $productQuantity[$product['id']]; ?></td>
         </tr>
         <?php endforeach; ?>
       </tbody>

@@ -39,7 +39,7 @@
           <option value="0">Скрыта</option>
         </select>
       </div>
-      <input type="submit" name="submit" class="btn btn-warning w-25 pt-3 pb-3 text-uppercase" value="Создать категорию">
+      <input type="submit" name="submit" class="btn btn-warning w-100 pt-3 pb-3 text-uppercase" value="Создать категорию">
     </form>
     
   </main>

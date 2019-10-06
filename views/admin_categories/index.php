@@ -29,11 +29,11 @@
       <tbody>
 
         <?php foreach ($categoriesList as $category): ?>
-          <tr>
-          <th scope="row"><?php echo $category['id']; ?></th>
-          <td><?php echo $category['name']; ?></td>
-          <td><?php echo $category['sort_order']; ?></td>
-          <td><?php echo Category::getStatusText($category['status']); ?></td>
+        <tr>
+          <td scope="row" title="Номер категории"><?php echo $category['id']; ?></td>
+          <td title="Название категории"><?php echo $category['name']; ?></td>
+          <td title="Прядковый номер"><?php echo $category['sort_order']; ?></td>
+          <td title="Статус"><?php echo Category::getStatusText($category['status']); ?></td>
           <td>
             <a href="categories/update/<?php echo $category['id']; ?>">
               <svg viewBox="0 -1 401.52289 401"  xmlns="http://www.w3.org/2000/svg">

@@ -63,7 +63,7 @@
         <label for="exampleFormControlFile1">Изображение продукта</label>
         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" value="">
       </div>
-      <input type="submit" name="submit" class="btn btn-warning w-25 pt-3 pb-3 text-uppercase" value="Создать товар">
+      <input type="submit" name="submit" class="btn btn-warning w-100 pt-3 pb-3 text-uppercase" value="Создать товар">
     </form>
     
   </main>

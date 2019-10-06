@@ -18,8 +18,8 @@
 		</div>
 		<img src="/template/img/nav-bcg.jpg" alt="">
 		<ul class="header_ul">
-			<li><a href="/catalog/">Каталог</a></li>
-			<li><a href="/contacts/">Контакты</a></li>
+<!-- 			<li><a href="/catalog/">Каталог</a></li> -->
+			<li><a href="#footer">Контакты</a></li>
 			<li>
 				<a href="#" class="header__call_back">Обратная связь:</a>
 				<div>
@@ -66,8 +66,8 @@
 							</form>
 						</div>
 						<ul class="header_ul d-none d-lg-block">
-							<li><a href="/catalog/">Каталог</a></li>
-							<li><a href="/contacts/">Контакты</a></li>
+		<!-- 					<li><a href="/catalog/">Каталог</a></li> -->
+							<li><a href="#footer">Контакты</a></li>
 							<li>
 								<a href="#">Обратная связь:</a>
 								<a href="" class="header__call">WATSAPP</a>

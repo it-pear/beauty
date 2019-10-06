@@ -41,7 +41,9 @@
 							</div>
 						<?php endforeach; ?>
 
-						<?php echo $pagination->get(); ?>
+						<div class="col-12 text-center">
+							<?php echo $pagination->get(); ?>
+						</div>
 					</div>
 				</div>
 			</div>

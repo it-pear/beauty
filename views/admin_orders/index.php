@@ -14,7 +14,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Заказы</h1>
     </div>
-    <table class="table table_orders">
+    <table class="table table_orders table_products">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#id</th>
@@ -31,15 +31,15 @@
 
         <?php foreach ($ordersList as $order): ?>
         <tr>
-          <td scope="row"><?php echo $order['id']; ?></td>
-          <td><?php echo $order['user_name']; ?></td>
-          <td>
+          <td scope="row" title="Номер заказа"><?php echo $order['id']; ?></td>
+          <td title="Имя клиента"><?php echo $order['user_name']; ?></td>
+          <td title="Телефон">
             <a href="tel:<?php echo $order['user_phone']; ?>">
               <?php echo $order['user_phone']; ?>
             </a>
           </td>
-          <td><?php echo $order['date']; ?></td>
-          <td><?php echo Order::getStatusText($order['status']); ?></td>
+          <td title="Дата покупки"><?php echo $order['date']; ?></td>
+          <td title="Статус"><?php echo Order::getStatusText($order['status']); ?></td>
           <td>
             <a href="orders/view/<?php echo $order['id']; ?>">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">

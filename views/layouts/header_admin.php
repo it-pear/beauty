@@ -28,23 +28,19 @@
 			.table_products tbody tr{
 				display: block;
 				width: 100%;
-			}.table_products tbody tr td{
+				margin-bottom: 30px;
+				border: 1px solid rgba(0,0,0,0.5);
+			}
+			.table_products tbody tr td{
 				display: block;
+				width: 100%;
 			}
-			.table_products tbody tr td:nth-child(1){
-
+			.table_products tbody tr td:before{
+				content: attr(title) " ";
+				font-weight: 500;
 			}
-			.table_products tbody tr td:nth-child(2){
-
-			}
-			.table_products tbody tr td:nth-child(3){
-
-			}
-			.table_products tbody tr td:nth-child(4){
-
-			}
-			.table_products tbody tr td:nth-child(5){
-
+			.table_products tbody tr td:nth-child(2n) {
+				background-color: rgba(0,0,0,0.05);
 			}
 		}
 		@media (min-width: 1024px){

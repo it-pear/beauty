@@ -538,5 +538,32 @@ footer{
   margin: auto;
 }
 
-
-
+/* пагинация */
+ul.pagination{
+	padding-top: 30px;
+	text-align: center;
+	width: 100%;
+	display: block;
+	li{
+		display: inline-block;
+		margin: 0 4px;
+		&.active{
+			a{
+				background-color: #CCA4A4;
+			}
+		}
+		&:hover{
+			a{
+				background-color: #CCA4A4;
+			}
+		}
+		a{
+			background-color: #F0C6C6;
+			width: 30px;
+			height: 30px;
+			display: block;
+			color: black;
+			padding-top: 4px;
+		}
+	}
+}

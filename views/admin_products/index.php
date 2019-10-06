@@ -29,9 +29,9 @@
 
         <?php foreach ($productsList as $product): ?>
           <tr>
-          <th scope="row"><?php echo $product['id']; ?></th>
-          <td><?php echo $product['name']; ?></td>
-          <td><?php echo $product['price']; ?> грн.</td>
+          <td scope="row" title="Номер товара"><?php echo $product['id']; ?></td>
+          <td title="Навзание"><?php echo $product['name']; ?></td>
+          <td title="Цена"><?php echo $product['price']; ?> грн.</td>
           <td>
             <a href="products/update/<?php echo $product['id']; ?>">
               <svg viewBox="0 -1 401.52289 401"  xmlns="http://www.w3.org/2000/svg">
